@@ -4,13 +4,29 @@ using UnityEngine;
 
 public class BasicMovement : MonoBehaviour {
 
+    public Rigidbody2D rigidbody;
+    public Animator animator;  
+
+    private Vector2 movement;
+
     private float movementSpeed = 5f;
 
-    void Update() {
-        
-      Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0.0f);  
+    private void Update() {
+      movement = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));  
+    }
 
-      transform.position = transform.position + movement * Time.deltaTime * movementSpeed;
+    void FixedUpdate() {
+            
+      animator.SetFloat("HorizontalSpeed", movement.x);
+      animator.SetFloat("VerticalSpeed", movement.y);
+      animator.SetFloat("Magnitude", movement.y);
+
+      float directionMultiplier = movement.x < 0 ? -1 : 1;
+
+      transform.localScale = new Vector2(directionMultiplier, transform.localScale.y);
+
+
+      rigidbody.MovePosition(rigidbody.position + movement * movementSpeed * Time.fixedDeltaTime);
     }
 
     private void OnTriggerEnter2D(Collider2D other) {

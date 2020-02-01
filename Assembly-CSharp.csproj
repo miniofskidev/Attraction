@@ -54,7 +54,10 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\EnemyController.cs" />
+<<<<<<< Updated upstream
      <Compile Include="Assets\Scripts\Patrol.cs" />
+=======
+>>>>>>> Stashed changes
      <Compile Include="Assets\Scripts\Player\BasicMovement.cs" />
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>/Users/applebaz/Documents/Unity/Attraction/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
