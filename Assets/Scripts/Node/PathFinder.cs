@@ -10,7 +10,7 @@ public class PathFinder : MonoBehaviour
 
     Node[] nodes;
   
-    public float speed = 4f;
+    public float speed = 8f;
     int nodeIndex = 0;
     float timer;
 
@@ -27,11 +27,16 @@ public class PathFinder : MonoBehaviour
     }
 
     void checkNode() {
-
+            
       timer = 0;
-
       currentPosHolder = nodes[nodeIndex].transform.position;
-      
+
+      if (nodeIndex == nodes.Length - 1) {
+
+        // The level is finished and we need to load another level here
+
+        Debug.Log("Level Finished");
+      }
     }
 
     // Update is called once per frame
