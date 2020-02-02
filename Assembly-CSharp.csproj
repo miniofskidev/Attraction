@@ -53,12 +53,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\PlacementDetector.cs" />
      <Compile Include="Assets\Scripts\CartController.cs" />
      <Compile Include="Assets\Scripts\EnemyController.cs" />
      <Compile Include="Assets\Scripts\Node\Node.cs" />
      <Compile Include="Assets\Scripts\Node\PathFinder.cs" />
      <Compile Include="Assets\Scripts\Patrol.cs" />
      <Compile Include="Assets\Scripts\Player\BasicMovement.cs" />
+     <Compile Include="Assets\Scripts\Rail.cs" />
+     <Compile Include="Assets\Scripts\RailParentSensor.cs" />
+     <Compile Include="Assets\Scripts\RailPlacementDetector.cs" />
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>/Users/applebaz/Documents/Unity/Attraction/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>

@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 3799371925731738031}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,6 +99,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidbody: {fileID: 6285677191138920664}
   animator: {fileID: 6285677191138920667}
+  railVertical: {fileID: 6076308492309416782, guid: 034201aafed874fb885b537d17511f7a,
+    type: 3}
+  railHorizontal: {fileID: 4960571124910149218, guid: 0be3621a727584c4eb10716abaa22936,
+    type: 3}
+  carriageStat: 0
 --- !u!95 &6285677191138920667
 Animator:
   serializedVersion: 3
@@ -194,7 +199,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.02, y: -0.12}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -205,5 +210,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.205199, y: 0.2236669}
+  m_Size: {x: 0.88, y: 1.06}
   m_EdgeRadius: 0
