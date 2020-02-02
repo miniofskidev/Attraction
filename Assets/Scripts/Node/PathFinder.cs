@@ -10,7 +10,7 @@ public class PathFinder : MonoBehaviour
 
     Node[] nodes;
 
-    public float speed = 4f;
+    public float speed = 10f;
     private int nodeIndex = 0;
     float timer;
 
@@ -29,12 +29,18 @@ public class PathFinder : MonoBehaviour
     bool checkNode()
     {
         timer = 0;
-        int tempInx = nodeIndex + 1;
-        if (nodes[tempInx].GetComponent<Node>().isEnable)
+        int tempInx = 0;
+        tempInx = nodeIndex + 1;
+        if (tempInx < nodes.Length)
         {
-            currentPosHolder = nodes[nodeIndex].transform.position;
-            Debug.Log(nodes[nodeIndex].enabled + " : " + nodeIndex);
-            return true;
+
+            if (nodes[tempInx].GetComponent<Node>().isEnable)
+            {
+                currentPosHolder = nodes[nodeIndex].transform.position;
+                Debug.Log(nodes[nodeIndex].enabled + " : " + nodeIndex);
+                return true;
+            }
+
         }
         return false;
     }
@@ -52,7 +58,7 @@ public class PathFinder : MonoBehaviour
         }
         else if (nodes[nodeIndex].enabled == true)
         {
-            if (nodeIndex < nodes.Length - 1)
+            if (nodeIndex < nodes.Length)
             {
                 if (checkNode() == true)
                     nodeIndex++;
