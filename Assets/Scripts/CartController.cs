@@ -6,15 +6,20 @@ public class CartController : MonoBehaviour {
 
   public Animator animator;
 
+  float currentPosX;
+  float currentPosY;
+  float targetPosX;
+  float targetPosY;
+
   public void updateAnimatorValues(Vector3 currentPos, Vector3 target) {
     
     // Set Direction value on animator left:1, right:2, down:3
 
-    float currentPosY = currentPos.y;
-    float currentPosX = currentPos.x;
+    currentPosY = currentPos.y;
+    currentPosX = currentPos.x;
 
-    float targetPosY = target.y;
-    float targetPosX = target.x;
+    targetPosY = target.y;
+    targetPosX = target.x;
 
     if (currentPosX <= targetPosX && Mathf.Approximately(currentPosY , targetPosY)) {      
       Debug.Log("Moving Right");

@@ -10,6 +10,7 @@ public class BasicMovement : MonoBehaviour {
     private Vector2 movement;
 
     private float movementSpeed = 5f;
+    private float directionMultiplier;
 
     private void Update() {
       movement = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));  
@@ -21,7 +22,7 @@ public class BasicMovement : MonoBehaviour {
       animator.SetFloat("Vertical", movement.y);
       //animator.SetFloat("Magnitude", movement.y);
 
-      float directionMultiplier = movement.x < 0 ? -2 : 2;
+      directionMultiplier = movement.x < 0 ? -2 : 2;
 
       transform.localScale = new Vector2(directionMultiplier, transform.localScale.y);
 
@@ -29,6 +30,9 @@ public class BasicMovement : MonoBehaviour {
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-      
+
+        Debug.Log("Triggered with " + other.name + "  " + other.GetComponent<GameObject>().Tag;);
+
+        
     }
 }
