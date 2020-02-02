@@ -7,6 +7,7 @@ public class RailParentSensor : MonoBehaviour
 
     private GameObject player;
     public bool hasRail = false;
+    public bool horizontalRailNeeded;
     public GameObject relatedNode;
     private void Awake()
     {
@@ -31,9 +32,14 @@ public class RailParentSensor : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (other.tag == "RailHorizontal" || other.tag == "RailVertical")
+        if (other.tag == "RailHorizontal" && horizontalRailNeeded)
         {
             // Debug.Log("Rail placed");
+            hasRail = true;
+            relatedNode.GetComponent<Node>().isEnable = true;
+        }
+        else if (other.tag == "RailVertical" && horizontalRailNeeded != true)
+        {
             hasRail = true;
             relatedNode.GetComponent<Node>().isEnable = true;
         }

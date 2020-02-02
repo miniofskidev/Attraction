@@ -259,7 +259,7 @@ PrefabInstance:
     - target: {fileID: 1620748444924481799, guid: 2e7dc5431e1ff4d1782fbe47444ea2af,
         type: 3}
       propertyPath: m_Name
-      value: RailParentSensorHorizontal (1)
+      value: RailParentSensorVertical
       objectReference: {fileID: 0}
     - target: {fileID: 6481881011248157943, guid: 2e7dc5431e1ff4d1782fbe47444ea2af,
         type: 3}
@@ -2852,6 +2852,11 @@ PrefabInstance:
       propertyPath: relatedNode
       value: 
       objectReference: {fileID: 480963948}
+    - target: {fileID: 84503856357002351, guid: 2e7dc5431e1ff4d1782fbe47444ea2af,
+        type: 3}
+      propertyPath: horizontalRailNeeded
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1620748444924481799, guid: 2e7dc5431e1ff4d1782fbe47444ea2af,
         type: 3}
       propertyPath: m_Name
