@@ -17,14 +17,13 @@ public class BasicMovement : MonoBehaviour {
 
     void FixedUpdate() {
             
-      animator.SetFloat("HorizontalSpeed", movement.x);
-      animator.SetFloat("VerticalSpeed", movement.y);
-      animator.SetFloat("Magnitude", movement.y);
+      animator.SetFloat("Horizontal", Mathf.Abs(movement.x));
+      animator.SetFloat("Vertical", movement.y);
+      //animator.SetFloat("Magnitude", movement.y);
 
-      float directionMultiplier = movement.x < 0 ? -1 : 1;
+      float directionMultiplier = movement.x < 0 ? -2 : 2;
 
       transform.localScale = new Vector2(directionMultiplier, transform.localScale.y);
-
 
       rigidbody.MovePosition(rigidbody.position + movement * movementSpeed * Time.fixedDeltaTime);
     }
