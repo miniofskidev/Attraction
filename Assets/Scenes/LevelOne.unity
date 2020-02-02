@@ -2746,19 +2746,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3799371925731738031, guid: 79fa2d47718a34ea194358a798ae6414,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6285677191138920660, guid: 79fa2d47718a34ea194358a798ae6414,
         type: 3}
       propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 6285677191138920660, guid: 79fa2d47718a34ea194358a798ae6414,
-        type: 3}
-      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 6285677191138920665, guid: 79fa2d47718a34ea194358a798ae6414,
@@ -2816,18 +2806,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6285677191138920671, guid: 79fa2d47718a34ea194358a798ae6414,
-        type: 3}
-      propertyPath: railVertical
-      value: 
-      objectReference: {fileID: 6076308492309416782, guid: 034201aafed874fb885b537d17511f7a,
-        type: 3}
-    - target: {fileID: 6285677191138920671, guid: 79fa2d47718a34ea194358a798ae6414,
-        type: 3}
-      propertyPath: railHorizontal
-      value: 
-      objectReference: {fileID: 4960571124910149218, guid: 0be3621a727584c4eb10716abaa22936,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79fa2d47718a34ea194358a798ae6414, type: 3}
 --- !u!1001 &7709461295357827402

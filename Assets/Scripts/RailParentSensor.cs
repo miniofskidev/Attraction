@@ -7,21 +7,25 @@ public class RailParentSensor : MonoBehaviour
 
     private GameObject player;
 
-    private void Start() {
-      player = GameObject.FindGameObjectWithTag("Player");
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
-    private void OnTriggerEnter2D(Collider2D other) {
+    private void OnTriggerEnter2D(Collider2D other)
+    {
 
-      Debug.Log("OnTrigger from Sensor " + other.name);
+        Debug.Log("OnTrigger from Sensor " + other.name);
 
-      if (other.tag == "Player") {
-        Physics2D.IgnoreCollision(player.GetComponent<Collider2D>(), GetComponent<Collider2D>());
-      }
+        if (other.tag == "Player")
+        {
+            Physics2D.IgnoreCollision(player.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+        }
 
-      if (other.tag == "RailVertical" || other.tag == "RailHorizontal") {
+        if (other.tag == "RailVertical" || other.tag == "RailHorizontal")
+        {
 
-        Debug.Log("Rail placed");
-      }
+            Debug.Log("Rail placed");
+        }
     }
 }
