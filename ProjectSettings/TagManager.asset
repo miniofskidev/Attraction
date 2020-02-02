@@ -8,6 +8,7 @@ TagManager:
   - RailVertical
   - RailHorizontal
   - Cart
+  - RailDetector
   layers:
   - Default
   - TransparentFX

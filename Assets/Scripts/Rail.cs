@@ -7,10 +7,12 @@ public class Rail : MonoBehaviour
 
     public bool shouldDestroy = false;
 
-    private void FixedUpdate() {
+    private void Update()
+    {
 
-      if (shouldDestroy) {
-        Destroy(this.gameObject);
-      }
+        if (shouldDestroy)
+        {
+            Destroy(this.gameObject);
+        }
     }
 }
