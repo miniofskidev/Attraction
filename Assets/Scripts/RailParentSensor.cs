@@ -31,7 +31,7 @@ public class RailParentSensor : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (other.tag == "RailHorizontal")
+        if (other.tag == "RailHorizontal" || other.tag == "RailVertical")
         {
             // Debug.Log("Rail placed");
             hasRail = true;
