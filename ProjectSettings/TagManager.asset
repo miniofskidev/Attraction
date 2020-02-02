@@ -4,8 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - circle
-  - wall
+  - Rail
+  - RailVertical
+  - RailHorizontal
+  - Cart
   layers:
   - Default
   - TransparentFX
