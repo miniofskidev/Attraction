@@ -15,4 +15,5 @@ public class Rail : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
 }

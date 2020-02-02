@@ -11,7 +11,7 @@ public class PathFinder : MonoBehaviour
     Node[] nodes;
 
     public float speed = 4f;
-    int nodeIndex = 0;
+    private int nodeIndex = 0;
     float timer;
 
     static Vector2 currentPosHolder;
@@ -26,33 +26,36 @@ public class PathFinder : MonoBehaviour
         checkNode();
     }
 
-    void checkNode()
+    bool checkNode()
     {
         timer = 0;
-        if (nodes[nodeIndex].GetComponent<Node>().isEnable)
+        int tempInx = nodeIndex + 1;
+        if (nodes[tempInx].GetComponent<Node>().isEnable)
         {
             currentPosHolder = nodes[nodeIndex].transform.position;
             Debug.Log(nodes[nodeIndex].enabled + " : " + nodeIndex);
+            return true;
         }
+        return false;
     }
 
     void Update()
     {
         timer = Time.deltaTime * speed;
-
         cartController.updateAnimatorValues(cart.transform.position, currentPosHolder);
 
-        if (new Vector2(cart.transform.position.x, cart.transform.position.y) != currentPosHolder && nodes[nodeIndex].GetComponent<Node>().isEnable)
+
+        if (new Vector2(cart.transform.position.x, cart.transform.position.y)
+                != currentPosHolder)
         {
-            // I need to move the player using rigidBody move method
             cart.transform.position = Vector3.Lerp(cart.transform.position, currentPosHolder, timer);
         }
         else if (nodes[nodeIndex].enabled == true)
         {
             if (nodeIndex < nodes.Length - 1)
             {
-                checkNode();
-                nodeIndex++;
+                if (checkNode() == true)
+                    nodeIndex++;
             }
         }
     }
