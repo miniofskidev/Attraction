@@ -6,7 +6,7 @@ public class RailParentSensor : MonoBehaviour
 {
 
     private GameObject player;
-
+    public GameObject relatedNode;
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
