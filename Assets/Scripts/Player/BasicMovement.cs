@@ -26,7 +26,12 @@ public class BasicMovement : MonoBehaviour
 
         if (Input.GetButtonDown("FixTheDamnThing"))
         {
+            
             placeItem();
+        } 
+        if (Input.GetButtonUp("FixTheDamnThing") || Input.GetButtonUp("PickTheDamnThing")) {
+
+            animator.SetBool("ShouldAttack", false);
         }
     }
 
@@ -43,8 +48,46 @@ public class BasicMovement : MonoBehaviour
         rigidbody.MovePosition(rigidbody.position + movement * movementSpeed * Time.fixedDeltaTime);
     }
 
+    private void attack() {
+
+      animator.SetBool("ShouldAttack", true);
+
+      // 0 right and left, 1 bottom, 2 left, 3 top
+      int status = 0;
+
+      if (movement.y > movement.x) {
+
+        // Vertical
+
+        if (movement.y > 0) {
+
+          // top          
+          status = 3;
+        } else if (movement.y < 0) {
+
+          // bottom
+          status = 1;
+        }        
+      } else {
+
+        if (movement.x > 0) {
+
+          // right          
+          status = 0;
+        } else if (movement.x < 0) {
+
+          // left
+          status = 0;
+        }   
+      }
+
+      animator.SetInteger("Status" ,status);
+    }
+
     private void placeItem()
     {
+
+        attack();
 
         Debug.Log("Place Item");
 
@@ -64,6 +107,8 @@ public class BasicMovement : MonoBehaviour
 
     private void pickUpItem(Collider2D other)
     {
+
+        attack();
 
         // Debug.Log("Picking up " + other.name + "  " + other.tag);
 
